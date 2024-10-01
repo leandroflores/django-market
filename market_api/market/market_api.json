@@ -1,0 +1,661 @@
+{
+	"info": {
+		"_postman_id": "fb3cde30-c9e7-4597-9751-6b3d94dfa3db",
+		"name": "Market API",
+		"description": "Market API with Django REST Framework.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15121408"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2131231312\",\n    \"name\": \"John\",\n    \"type\": \"F\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2131231312\",\n    \"name\": \"John\",\n    \"type\": \"F\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}//2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								"",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Customers requests folder.\n\nGet Customers: List all Customers.\n\nCreate Customer: Create a new Customers.\n\nRead Customer: Get data from one single Customer.\n\nUpdate Customer: Update values from one single Customer.\n\nDelete Customer: Delete a Customer."
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{category_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{category_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Category A\",\n    \"description\": \"Test description A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{category_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{category_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{category_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{category_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Category B\",\n    \"description\": \"Test description B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{category_url}}/3/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{category_url}}",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{category_url}}/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{category_url}}",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Categories requests folder.\n\nGet Categories: List all Categories.\n\nCreate Category: Create a new Category.\n\nRead Category: Get data from one single Category.\n\nUpdate Category: Update values from one single Category.\n\nDelete Category: Delete a Category."
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{product_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{product_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Product A\",\n    \"description\": \"Product A description\",\n    \"price\": 13.45,\n    \"stock\": 0,\n    \"category\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{product_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{product_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{product_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{product_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Product A\",\n    \"description\": \"Product A description\",\n    \"price\": 13.45,\n    \"stock\": 10,\n    \"category\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{product_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{product_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{product_url}}/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{product_url}}",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Products requests folder.\n\nGet Products: List all Products.\n\nCreate Product: Create a new Product.\n\nRead Product: Get data from one single Product.\n\nUpdate Product: Update values from one single Product.\n\nDelete Product: Delete a Product."
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Get Employees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2222222222\",\n    \"name\": \"Peter\",\n    \"department\": \"Sales\",\n    \"hire_date\": \"2024-10-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2222222222\",\n    \"name\": \"Peter Hilton\",\n    \"department\": \"Sales\",\n    \"hire_date\": \"2024-10-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Employees requests folder.\n\nGet Employees: List all Employees.\n\nCreate Employee: Create a new Employee.\n\nRead Employee: Get data from one single Employee.\n\nUpdate Employee: Update values from one single Employee.\n\nDelete Employee: Delete an Employee."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "customer_url",
+			"value": "customers",
+			"type": "string"
+		},
+		{
+			"key": "category_url",
+			"value": "categories",
+			"type": "string"
+		},
+		{
+			"key": "product_url",
+			"value": "products",
+			"type": "string"
+		},
+		{
+			"key": "employees_url",
+			"value": "employees",
+			"type": "string"
+		}
+	]
+}

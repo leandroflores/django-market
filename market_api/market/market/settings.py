@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "clients.apps.CustomersConfig",
+    "employees.apps.EmployeesConfig",
     "products.apps.ProductsConfig",
     "phonenumber_field",
     "rest_framework",
