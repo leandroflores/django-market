@@ -92,7 +92,8 @@ class CRUDAPIView(
             return None
     
     def list(self, request: Request, *args, **kwargs) -> Response:
-        serializer: serializers.Serializer = self.serializer(self.list_model(), many=True)
+        instances: list[models.Model] = self.list_model()
+        serializer: serializers.Serializer = self.serializer(instances, many=True)
         return Response({
             self.plural_name: serializer.data
         })
