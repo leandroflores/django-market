@@ -8,157 +8,6 @@
 	},
 	"item": [
 		{
-			"name": "Customers",
-			"item": [
-				{
-					"name": "Get Customers",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/{{customer_url}}/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"{{customer_url}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Customer",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"document\": \"2131231312\",\n    \"name\": \"John\",\n    \"type\": \"F\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/{{customer_url}}/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"{{customer_url}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Read Customer",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/{{customer_url}}/1/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"{{customer_url}}",
-								"1",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Customer",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"document\": \"2131231312\",\n    \"name\": \"John\",\n    \"type\": \"F\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/{{customer_url}}//2/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"{{customer_url}}",
-								"",
-								"2",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Customer",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/{{customer_url}}/1/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"{{customer_url}}",
-								"1",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Customers requests folder.\n\nGet Customers: List all Customers.\n\nCreate Customer: Create a new Customers.\n\nRead Customer: Get data from one single Customer.\n\nUpdate Customer: Update values from one single Customer.\n\nDelete Customer: Delete a Customer."
-		},
-		{
 			"name": "Categories",
 			"item": [
 				{
@@ -307,6 +156,307 @@
 				}
 			],
 			"description": "Categories requests folder.\n\nGet Categories: List all Categories.\n\nCreate Category: Create a new Category.\n\nRead Category: Get data from one single Category.\n\nUpdate Category: Update values from one single Category.\n\nDelete Category: Delete a Category."
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2131231312\",\n    \"name\": \"Mary Shelley\",\n    \"type\": \"F\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2131231312\",\n    \"name\": \"John\",\n    \"type\": \"F\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}//2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								"",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{customer_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{customer_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Customers requests folder.\n\nGet Customers: List all Customers.\n\nCreate Customer: Create a new Customers.\n\nRead Customer: Get data from one single Customer.\n\nUpdate Customer: Update values from one single Customer.\n\nDelete Customer: Delete a Customer."
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Get Employees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2222222222\",\n    \"name\": \"Peter\",\n    \"department\": \"Sales\",\n    \"hire_date\": \"2024-10-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"2222222222\",\n    \"name\": \"Peter Hilton\",\n    \"department\": \"Sales\",\n    \"hire_date\": \"2024-10-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{employees_url}}/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{employees_url}}",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Employees requests folder.\n\nGet Employees: List all Employees.\n\nCreate Employee: Create a new Employee.\n\nRead Employee: Get data from one single Employee.\n\nUpdate Employee: Update values from one single Employee.\n\nDelete Employee: Delete an Employee."
 		},
 		{
 			"name": "Products",
@@ -459,10 +609,10 @@
 			"description": "Products requests folder.\n\nGet Products: List all Products.\n\nCreate Product: Create a new Product.\n\nRead Product: Get data from one single Product.\n\nUpdate Product: Update values from one single Product.\n\nDelete Product: Delete a Product."
 		},
 		{
-			"name": "Employees",
+			"name": "Sales",
 			"item": [
 				{
-					"name": "Get Employees",
+					"name": "Get Sales",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -479,12 +629,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/{{employees_url}}/",
+							"raw": "{{base_url}}/{{sales_url}}/",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"{{employees_url}}",
+								"{{sales_url}}",
 								""
 							]
 						}
@@ -492,13 +642,13 @@
 					"response": []
 				},
 				{
-					"name": "Create Employee",
+					"name": "Create Sale",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"document\": \"2222222222\",\n    \"name\": \"Peter\",\n    \"department\": \"Sales\",\n    \"hire_date\": \"2024-10-01\"\n}",
+							"raw": "{\n    \"date\": \"2024-06-13\",\n    \"hour\": \"08:48:05\",\n    \"status\": \"PAGO\",\n    \"payment\": \"PIX\",\n    \"total_amount\": 84.50,\n    \"customer\": 3,\n    \"employee\": 1,\n    \"items\": [\n        {\n            \"product\": 1,\n            \"quantity\": 10,\n            \"unit_price\": 8.50,\n            \"total_price\": 85.00,\n            \"discount\": 0.50\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -506,12 +656,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/{{employees_url}}/",
+							"raw": "{{base_url}}/{{sales_url}}/",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"{{employees_url}}",
+								"{{sales_url}}",
 								""
 							]
 						}
@@ -519,7 +669,7 @@
 					"response": []
 				},
 				{
-					"name": "Read Employee",
+					"name": "Read Sale",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -536,12 +686,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/{{employees_url}}/1/",
+							"raw": "{{base_url}}/{{sales_url}}/1/",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"{{employees_url}}",
+								"{{sales_url}}",
 								"1",
 								""
 							]
@@ -550,13 +700,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Employee",
+					"name": "Update Sale",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"document\": \"2222222222\",\n    \"name\": \"Peter Hilton\",\n    \"department\": \"Sales\",\n    \"hire_date\": \"2024-10-01\"\n}",
+							"raw": "{\n    \"date\": \"2024-06-13\",\n    \"hour\": \"08:48:05\",\n    \"status\": \"PAGO\",\n    \"payment\": \"PIX\",\n    \"total_amount\": 75.00,\n    \"customer\": 3,\n    \"employee\": 1,\n    \"items\": [\n        {\n            \"product\": 1,\n            \"quantity\": 10,\n            \"unit_price\": 8.50,\n            \"total_price\": 85.00,\n            \"discount\": 10.00\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -564,12 +714,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/{{employees_url}}/1/",
+							"raw": "{{base_url}}/{{sales_url}}/1/",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"{{employees_url}}",
+								"{{sales_url}}",
 								"1",
 								""
 							]
@@ -578,7 +728,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Employee",
+					"name": "Delete Sale",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -592,13 +742,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/{{employees_url}}/2/",
+							"raw": "{{base_url}}/{{sales_url}}/3/",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"{{employees_url}}",
-								"2",
+								"{{sales_url}}",
+								"3",
 								""
 							]
 						}
@@ -606,7 +756,7 @@
 					"response": []
 				}
 			],
-			"description": "Employees requests folder.\n\nGet Employees: List all Employees.\n\nCreate Employee: Create a new Employee.\n\nRead Employee: Get data from one single Employee.\n\nUpdate Employee: Update values from one single Employee.\n\nDelete Employee: Delete an Employee."
+			"description": "Sales requests folder.\n\nGet Sales: List all Sales.\n\nCreate Sale: Create a new Sale.\n\nRead Sale: Get data from one single Sale.\n\nUpdate Sale: Update values from one single Sale.\n\nDelete Sale: Delete a Sale."
 		}
 	],
 	"event": [
@@ -655,6 +805,11 @@
 		{
 			"key": "employees_url",
 			"value": "employees",
+			"type": "string"
+		},
+		{
+			"key": "sales_url",
+			"value": "sales",
 			"type": "string"
 		}
 	]

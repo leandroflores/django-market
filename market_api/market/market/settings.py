@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "products.apps.ProductsConfig",
     "phonenumber_field",
     "rest_framework",
+    "sales.apps.SalesConfig",
 ]
 
 MIDDLEWARE = [

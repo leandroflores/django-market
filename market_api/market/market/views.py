@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from django.db import models
+from django.db import models, transaction
 
 from rest_framework import (
     mixins,
@@ -98,6 +98,7 @@ class CRUDAPIView(
             self.plural_name: serializer.data
         })
 
+    @transaction.atomic
     def create(self, request: Request, *args, **kwargs) -> Response:
         serializer: serializers.Serializer = self.serializer(data=request.data)
         if serializer.is_valid():
@@ -118,6 +119,7 @@ class CRUDAPIView(
         serializer: serializers.Serializer = self.serializer(model_)
         return Response(serializer.data)
     
+    @transaction.atomic
     def update(self, request: Request, id: int, *args, **kwargs) -> Response:
         model_ = self.get_object(id)
         if not model_:
@@ -131,6 +133,7 @@ class CRUDAPIView(
             status=status.HTTP_400_BAD_REQUEST,
         )
     
+    @transaction.atomic
     def destroy(self, request: Request, id: int, *args, **kwargs) -> Response:
         model_ = self.get_object(id)
         if not model_:
