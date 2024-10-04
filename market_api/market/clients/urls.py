@@ -1,3 +1,4 @@
+from os import name
 from django.urls import re_path
 from .views import CustomerAPIView
 
@@ -7,7 +8,7 @@ urlpatterns = [
         CustomerAPIView.as_view({
             "get": "list", 
             "post": "create",
-        }),
+        })
     ),
     re_path(
         r"^customers/(?P<id>[0-9]+)/$", 
@@ -15,6 +16,6 @@ urlpatterns = [
             "get": "retrieve",
             "put": "update",
             "delete": "destroy",
-        }),
+        })
     ),
 ]
