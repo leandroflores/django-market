@@ -35,7 +35,7 @@ class SaleSerializer(serializers.ModelSerializer):
     @transaction.atomic
     def update(self, instance: Sale, validated_data: dict) -> Sale:
         items: dict = validated_data.pop("items", None)
-        
+
         instance.date = validated_data.get("date", instance.date)
         instance.hour = validated_data.get("hour", instance.date)
         instance.status = validated_data.get("status", instance.status)

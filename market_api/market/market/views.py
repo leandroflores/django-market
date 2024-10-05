@@ -10,7 +10,7 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import serializers
 
-class APIView(ABC, viewsets.GenericViewSet):
+class APIView(ABC, viewsets.GenericViewSet): # pragma: no cover
     
     @abstractmethod
     def model_name(self) -> str:
@@ -20,31 +20,31 @@ class APIView(ABC, viewsets.GenericViewSet):
     def plural_name(self) -> str:
         return f"{self.model_name()}s"
 
-class CreateAPIView(ABC, mixins.CreateModelMixin):
+class CreateAPIView(ABC, mixins.CreateModelMixin): # pragma: no cover
     
     @abstractmethod
     def create(self, request: Request, *args, **kwargs) -> Response:
-        ...
+        ... 
 
-class RetrieveAPIView(ABC, mixins.RetrieveModelMixin):
+class RetrieveAPIView(ABC, mixins.RetrieveModelMixin): # pragma: no cover
     
     @abstractmethod
     def retrieve(self, request: Request, id: int, *args, **kwargs) -> Response:
         ...
 
-class UpdateAPIView(ABC, mixins.UpdateModelMixin):
+class UpdateAPIView(ABC, mixins.UpdateModelMixin): # pragma: no cover
     
     @abstractmethod
     def update(self, request: Request, id: int, *args, **kwargs) -> Response:
         ...
 
-class DeleteAPIView(ABC, mixins.DestroyModelMixin):
+class DeleteAPIView(ABC, mixins.DestroyModelMixin): # pragma: no cover
     
     @abstractmethod
     def destroy(self, request: Request, id: int, *args, **kwargs):
-        return super().destroy(request, *args, **kwargs)
+        ...
 
-class ListAPIView(ABC, mixins.ListModelMixin):
+class ListAPIView(ABC, mixins.ListModelMixin): # pragma: no cover
     
     @abstractmethod
     def list(self, request: Request, *args, **kwargs) -> Response:
@@ -69,15 +69,15 @@ class CRUDAPIView(
 
     @abstractmethod
     def get_model(self) -> models.Model:
-        ...
+        ... # pragma: no cover
 
     @abstractmethod
     def get_serializer(self) -> serializers.Serializer:
-        ...
+        ... # pragma: no cover
 
     @abstractmethod
     def list_model(self) -> list:
-        ...
+        ... # pragma: no cover
 
     def not_found_by_id(self) -> Response:
         return Response(

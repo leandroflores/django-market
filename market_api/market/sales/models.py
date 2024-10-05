@@ -43,4 +43,4 @@ class SaleItem(models.Model):
     discount = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
 
     def __str__(self):
-        return f"Item {self.product} (x{self.quantity}) - Sale {self.sale.pk}"
+        return f"{self.product} {self.quantity} x {self.unit_price} = {self.total_price}"
