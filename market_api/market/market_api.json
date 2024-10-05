@@ -674,6 +674,82 @@
 					"response": []
 				},
 				{
+					"name": "Get Sales by Customer CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{sales_url}}/{{by_customer_url}}/3/?export=csv",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{sales_url}}",
+								"{{by_customer_url}}",
+								"3",
+								""
+							],
+							"query": [
+								{
+									"key": "export",
+									"value": "csv"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales by Customer PDF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{sales_url}}/{{by_customer_url}}/3/?export=pdf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{sales_url}}",
+								"{{by_customer_url}}",
+								"3",
+								""
+							],
+							"query": [
+								{
+									"key": "export",
+									"value": "pdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Sales by Employee",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -700,6 +776,82 @@
 								"{{by_employee_url}}",
 								"1",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales by Employee CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{sales_url}}/{{by_employee_url}}/1/?export=csv",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{sales_url}}",
+								"{{by_employee_url}}",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "export",
+									"value": "csv"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales by Employee PDF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{sales_url}}/{{by_employee_url}}/1/?export=pdf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{sales_url}}",
+								"{{by_employee_url}}",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "export",
+									"value": "pdf"
+								}
 							]
 						}
 					},
@@ -740,6 +892,96 @@
 								{
 									"key": "end_date",
 									"value": "2024-10-30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales by Period CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{sales_url}}/{{by_period_url}}/?start_date=2024-01-01&end_date=2024-10-30&export=csv",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{sales_url}}",
+								"{{by_period_url}}",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "end_date",
+									"value": "2024-10-30"
+								},
+								{
+									"key": "export",
+									"value": "csv"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales by Period PDF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{sales_url}}/{{by_period_url}}/?start_date=2024-01-01&end_date=2024-10-30&export=pdf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{sales_url}}",
+								"{{by_period_url}}",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "end_date",
+									"value": "2024-10-30"
+								},
+								{
+									"key": "export",
+									"value": "pdf"
 								}
 							]
 						}
