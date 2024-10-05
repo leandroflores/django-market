@@ -31,6 +31,32 @@ class Sale(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="sales")
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name="sales")
 
+    @staticmethod
+    def columns_header() -> list:
+        return [
+            "Date", 
+            "Hour", 
+            "Customer",
+            "Employee",
+            "Status",
+            "Payment",
+            "Discount",
+            "Total Amount",
+        ]
+
+    @property
+    def row(self) -> list:
+        return [
+            self.date.strftime("%d/%m/%Y"),
+            self.hour.strftime("%H:%M"),
+            self.customer.name,
+            self.employee.name,
+            self.status,
+            self.payment,
+            f"{self.discount:.2f}",
+            f"{self.total_amount:.2f}",
+        ]
+
     def __str__(self):
         return f"Sale {self.pk} - {self.date} - {self.customer}"
     

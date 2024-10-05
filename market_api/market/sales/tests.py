@@ -1,9 +1,12 @@
+import csv
 import json
+from os import read
 import pytest
 
 from copy import deepcopy
 from datetime import date
 from django.core.handlers.wsgi import WSGIRequest
+from io import StringIO
 from rest_framework import status
 from rest_framework.test import APIClient
 
@@ -600,11 +603,60 @@ def test_get_sales_by_customer(
     }
 
 @pytest.mark.django_db
+def test_get_sales_by_customer_in_csv_format(
+    api_client: APIClient, 
+    sale_url: str,
+    customer_data: dict,
+    sale: Sale,
+):
+    
+    # Arrange
+    export: str = "csv"
+    id_customer: int = customer_data["id"]
+    
+    # Act
+    url: str = f"{sale_url}/customer/{id_customer}/?export={export}"
+    response: WSGIRequest = api_client.get(url, format="json")
+    csv_file: StringIO = StringIO(response.content.decode("utf-8"))
+    reader = csv.reader(csv_file)
+    header: list = next(reader)
+    content: list = list(reader)
+
+    # Assert
+    assert response.status_code == status.HTTP_200_OK
+    assert response["Content-Type"] == "text/csv"
+    assert response["Content-Disposition"] == "attachment; filename='sales.csv'"
+    assert header == Sale.columns_header()
+    assert len(content) == 1
+    assert content == [sale.row]
+
+@pytest.mark.django_db
+def test_get_sales_by_customer_in_pdf_format(
+    api_client: APIClient, 
+    sale_url: str,
+    customer_data: dict,
+    sale: Sale,
+):
+    
+    # Arrange
+    export: str = "pdf"
+    id_customer: int = customer_data["id"]
+    
+    # Act
+    url: str = f"{sale_url}/customer/{id_customer}/?export={export}"
+    response: WSGIRequest = api_client.get(url, format="json")
+
+    # Assert
+    assert response.status_code == status.HTTP_200_OK
+    assert response["Content-Type"] == "application/pdf"
+    assert response["Content-Disposition"] == "attachment; filename='sales.pdf'"
+    assert len(response.content) > 0
+
+@pytest.mark.django_db
 def test_get_sales_by_customer_not_found(
     api_client: APIClient, 
     sale_url: str,
     id_not_found: int,
-    sale_data: dict,
 ):
     
     # Arrange
@@ -644,6 +696,55 @@ def test_get_sales_by_employee(
         "employee_id": f"{id_employee}",
         "sales": [sale_data]
     }
+
+@pytest.mark.django_db
+def test_get_sales_by_employee_in_csv_format(
+    api_client: APIClient, 
+    sale_url: str,
+    employee_data: dict,
+    sale: Sale,
+):
+    
+    # Arrange
+    export: str = "csv"
+    id_employee: int = employee_data["id"]
+    
+    # Act
+    url: str = f"{sale_url}/employee/{id_employee}/?export={export}"
+    response: WSGIRequest = api_client.get(url, format="json")
+    csv_file: StringIO = StringIO(response.content.decode("utf-8"))
+    reader = csv.reader(csv_file)
+    header: list = next(reader)
+    content: list = list(reader)
+
+    # Assert
+    assert response.status_code == status.HTTP_200_OK
+    assert response["Content-Type"] == "text/csv"
+    assert response["Content-Disposition"] == "attachment; filename='sales.csv'"
+    assert header == Sale.columns_header()
+    assert len(content) == 1
+    assert content == [sale.row]
+
+@pytest.mark.django_db
+def test_get_sales_by_employee_in_pdf_format(
+    api_client: APIClient, 
+    sale_url: str,
+    employee_data: dict,
+):
+    
+    # Arrange
+    export: str = "pdf"
+    id_employee: int = employee_data["id"]
+    
+    # Act
+    url: str = f"{sale_url}/employee/{id_employee}/?export={export}"
+    response: WSGIRequest = api_client.get(url, format="json")
+
+    # Assert
+    assert response.status_code == status.HTTP_200_OK
+    assert response["Content-Type"] == "application/pdf"
+    assert response["Content-Disposition"] == "attachment; filename='sales.pdf'"
+    assert len(response.content) > 0
 
 @pytest.mark.django_db
 def test_get_sales_by_employee_not_found(
@@ -692,6 +793,57 @@ def test_get_sales_by_period(
         "end_date": f"{day}",
         "sales": [sale_data]
     }
+
+@pytest.mark.django_db
+def test_get_sales_by_period_in_csv_format(
+    api_client: APIClient, 
+    sale_url: str,
+    sale_values: dict,
+    sale: Sale,
+):
+    
+    # Arrange
+    sale_date: date = sale_values["date"]
+    day: str = sale_date.strftime("%Y-%m-%d")
+    export: str = "csv"
+    
+    # Act
+    url: str = f"{sale_url}/period/?start_date={day}&end_date={day}&export={export}"
+    response: WSGIRequest = api_client.get(url, format="json")
+    csv_file: StringIO = StringIO(response.content.decode("utf-8"))
+    reader = csv.reader(csv_file)
+    header: list = next(reader)
+    content: list = list(reader)
+
+    # Assert
+    assert response.status_code == status.HTTP_200_OK
+    assert response["Content-Type"] == "text/csv"
+    assert response["Content-Disposition"] == "attachment; filename='sales.csv'"
+    assert header == Sale.columns_header()
+    assert len(content) == 1
+    assert content == [sale.row]
+
+@pytest.mark.django_db
+def test_get_sales_by_period_in_pdf_format(
+    api_client: APIClient, 
+    sale_url: str,
+    sale_values: dict,
+):
+    
+    # Arrange
+    sale_date: date = sale_values["date"]
+    day: str = sale_date.strftime("%Y-%m-%d")
+    export: str = "pdf"
+    
+    # Act
+    url: str = f"{sale_url}/period/?start_date={day}&end_date={day}&export={export}"
+    response: WSGIRequest = api_client.get(url, format="json")
+
+    # Assert
+    assert response.status_code == status.HTTP_200_OK
+    assert response["Content-Type"] == "application/pdf"
+    assert response["Content-Disposition"] == "attachment; filename='sales.pdf'"
+    assert len(response.content) > 0
 
 @pytest.mark.django_db
 def test_get_sales_by_period_without_start_date(
